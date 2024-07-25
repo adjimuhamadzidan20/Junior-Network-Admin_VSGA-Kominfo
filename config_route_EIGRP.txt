@@ -1,0 +1,7 @@
+Router>enable
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router eigrp 200
+Router(config-router)#network 192.168.1.0 0.0.0.255
+Router(config-router)#network 10.10.10.0 0.0.0.3
+Router(config-router)#end

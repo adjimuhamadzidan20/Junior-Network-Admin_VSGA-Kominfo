@@ -1,0 +1,33 @@
+Switch>enable
+Switch#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 10
+Switch(config-vlan)#interface range fastEthernet 0/1-5
+Switch(config-if-range)#switchport access vlan 10
+Switch(config-if-range)#vlan 20
+Switch(config-vlan)#interface range fastEthernet 0/11-15
+Switch(config-if-range)#switchport access vlan 20
+Switch(config-if-range)#
+Switch#
+
+Router>enable
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int G0/0/0.10
+Router(config-subif)#encapsulation dot1Q 10
+Router(config-subif)#ip add 192.168.10.1 255.255.255.0
+Router(config-subif)#int G0/0/0.20
+Router(config-subif)#encapsulation dot1Q 20
+Router(config-subif)#ip add 192.168.20.1 255.255.255.0
+Router(config-subif)#
+Router#
+Router(config)#interface gigabitEthernet0/0/0
+Router(config-if)#no shutdown
+
+Switch#enable
+Switch#config
+Configuring from terminal, memory, or network [terminal]? t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#int G0/1
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#

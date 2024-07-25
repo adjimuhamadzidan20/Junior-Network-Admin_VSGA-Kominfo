@@ -1,0 +1,14 @@
+Router(config)#int gigabitEthernet 0
+Router(config-if)#ip add
+Router(config-if)#ip address 192.168.1.1 255.255.255.0
+Router(config-if)#no sh 
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0, changed state to up
+
+Router(config-if)#ip dhcp pool kominfo
+Router(dhcp-config)#net 192.168.1.1 255.255.255.0
+Router(dhcp-config)#default-router 192.168.1.1
+Router(dhcp-config)#

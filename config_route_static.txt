@@ -1,0 +1,20 @@
+Router#config
+Configuring from terminal, memory, or network [terminal]? t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int fa0/0
+Router(config-if)#ip add 192.168.1.1 255.255.255.0
+Router(config-if)#no sh
+Router(config-if)#
+
+Router(config-if)#exit
+Router(config)#int se0/0/0
+Router(config-if)#ip add 172.16.1.1 255.255.255.0
+Router(config-if)#no sh
+
+Router(config-if)#exit
+Router(config)#
+
+Router>enable
+Router#config t
+Router(config)#ip route 192.168.2.0 255.255.255.0 172.16.1.2
+Router(config)#

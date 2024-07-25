@@ -1,0 +1,10 @@
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router bgp 200
+Router(config-router)#network 10.10.10.0 mask 255.255.255.252
+Router(config-router)#network 192.168.100.0 mask 255.255.255.0
+Router(config-router)#bgp router-id 10.10.10.1
+Router(config-router)#neighbor 10.10.10.2 remote-as 400
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console

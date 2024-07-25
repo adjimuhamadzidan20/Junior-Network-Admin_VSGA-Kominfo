@@ -1,0 +1,11 @@
+Router>enable
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router ospf 100
+Router(config-router)#network 192.168.1.0 0.0.0.255 area 100
+Router(config-router)#network 10.10.10.0 0.0.0.3 area 100
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+00:06:26: %OSPF-5-ADJCHG: Process 100, Nbr 20.20.20.1 on GigabitEthernet0/0/0 from LOADING to FULL, Loading Done
